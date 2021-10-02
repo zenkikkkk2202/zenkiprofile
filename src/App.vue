@@ -1,28 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <nav>
+      <router-link to="/" tag="li">Home</router-link>
+      <router-link to="/works" tag="li">Works</router-link>
+      <router-link to="/about" tag="li">About</router-link>
+    </nav>
+    <router-view />
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+nav{
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
+
+nav li{
+  font-size: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  list-style: none;
+  display: inline-block;
+  width: 10%; /* ここで項目の幅を指定します */
+}
+ 
+nav li:hover{
+    cursor: pointer;
+    border-bottom: 2px solid#808080; /* 下線の太さや色を指定します */
+}
+
+.router-link-exact-active{
+  color: gray;
+}
+
 </style>
